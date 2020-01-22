@@ -1,0 +1,15 @@
+$def with(plik)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/style.css" type="text/css" rel="stylesheet">
+    <title>Zczytane z onetu</title>
+</head>
+<body>
+    $for x in plik:
+    <a href="https://$x"> <h4>$x</h4> </a>
+
+</body>
+</html>

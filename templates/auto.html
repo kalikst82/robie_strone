@@ -1,0 +1,34 @@
+$def with(a, kk)
+
+
+<div id="prawa">
+	$if a:
+		$for x in a:
+			$x<br>
+	$if kk:
+		<h3>DATA: KILOMETRY: PALIWO: SREDNIA </h3> <h3>$kk[0] * $kk[1] * $kk[2] * $kk[3] * $kk[2] * $kk[4]</h3>
+	$else:
+		<h3>----------</h3>
+		
+		
+	<center>
+	<form action="/auto_program" method="POST">
+
+		<h1><br> <input type="text" placeholder="Kilometry" name="action"></h1>
+
+		<h1><br><input type="text" placeholder="Ilość" name="ilo"></h1>
+		<h1>Cena<br><input type="text" name="cena"></h1>
+		<h3>----------</h3>
+		<input type="Submit" value="Wpisz">
+		</form>
+		</center>
+</div>
+
+<div id="lewaa">
+	<h2>MENU</h2>
+	<a href="/ostatni"><h3>Ostatni wpis</h3></a>
+	<a href="wwpisy"><h3>Wszystkie wpisy</h3></a>
+	<a href="suma_kosztow"><h3>Suma Kosztow</h3></a>
+	<a href="/przejechane"><h3>Przejechane kilometry</h3></a>
+</div>
+	

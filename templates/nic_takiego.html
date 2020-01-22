@@ -1,0 +1,28 @@
+$def with (room, fol, zbir)
+
+$if fol:
+	$fol
+	   <a href="/logout">Log out</a>
+$else:
+	<p><a target="_top" href="/login">Login</a></p>
+	<p><a href="/signup">Sign up</a></p>
+<br>
+<h2><center>Road Map</center></h2>
+$if zbir[0] == room.name:
+	<h3>$room.name</h3>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[1] == room.name:
+	$zbir[0]<h3>$room.name</h3>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[2] == room.name:
+	$zbir[0]<br>$zbir[1] <br><h3>$room.name</h3>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[3] == room.name:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<h3>$room.name</h3>
+	$zbir[4]<br>$zbir[5]
+$elif zbir[4] == room.name:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<h3>$room.name</h3>$zbir[5]
+$else:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<h3>$room.name</h3>

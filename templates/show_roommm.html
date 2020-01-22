@@ -1,0 +1,87 @@
+$def with (room, fol, zbir)
+
+<html>
+	<head>
+		<title>Gothons Of Planet Percal #25</title>
+	</head>
+
+<style>
+div
+{
+text-shadow: 5px 5px 5px #FF0000;
+}
+h1
+{
+width:300px;
+height:100px;
+background-color:yellow;
+-moz-box-shadow: 10px 10px 5px #888888; /* Old Firefox */
+box-shadow: 10px 10px 5px #888888;
+}
+h2
+{
+width:140px;
+height:40px;
+background-color:yellow;
+-moz-box-shadow: 10px 10px 5px #888888; /* Old Firefox */
+box-shadow: 10px 10px 5px #888888;
+}
+</style>
+
+
+<body>
+$if fol:
+	$fol
+	   <a href="/logout">Log out</a>
+$else:
+	<p><a href="/login">Login</a></p>
+	<p><a href="/signup">Sign up</a></p>
+<br>
+<h2><center>Road Map</center></h2>
+$if zbir[0] == room.name:
+	<div>$room.name</div>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[1] == room.name:
+	$zbir[0]<div>$room.name</div>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[2] == room.name:
+	$zbir[0]<br>$zbir[1] <br><div>$room.name</div>$zbir[3]
+	<br>$zbir[4]<br>$zbir[5]
+$elif zbir[3] == room.name:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<div>$room.name</div>
+	$zbir[4]<br>$zbir[5]
+$elif zbir[4] == room.name:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<div>$room.name</div>$zbir[5]
+$else:
+	$zbir[0]<br>$zbir[1] <br>$zbir[2]<br>$zbir[3]
+	<br>$zbir[4]<div>$room.name</div>
+
+<br>
+
+
+<br>
+
+
+<center><h1>$room.name</h1></center>
+<pre>
+
+<center>$room.description </center>
+</pre>
+
+$if room.name == "Death":
+	<p><center><a href="/">Play Again?</a></center></p>
+$elif room.name == "The End":
+	<p><center>_____________________________________________
+				<p><a href="/">Play Again?</a></p></center></p>
+$else:
+	<p>
+	<center>
+	<form action="/game" method="POST">
+		<input type="text" name="action"> <input type="Submit">
+		</form>
+		</center>
+		</p>
+
+</body>
+</html>
